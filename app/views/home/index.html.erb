@@ -1,0 +1,8 @@
+<h1>Hembee.com</h1>
+<% @listings.each do |listing| %>
+  <div class="listing-card">
+    <%= image_tag(listing.main_image_url) %>
+    <p><%= link_to " view product", "http://www.etsy.com/listing/#{listing.etsy_listing_id}" tar %> <span style="float:right"><%= listing.price %></span></p>
+  </div>
+
+<% end %>
