@@ -2,33 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  font-family: verdana, arial, helvetica, sans-serif;
-  background:#f2f2f2;
-  margin:0;
-  padding:0;
-  text-align: center;
+  height: 100%;
+  font-family: europa,'Helvetica Neue', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: #525252;
+  font-size:16px;
+  background-color: #f2f2f2;
 }
 
-.listing-card {
-  display: inline-block;
-  margin: 2%;
-  min-width: 270px;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  vertical-align: top;
-  width: 25%;
-  box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
-  text-align: center;
-  background: #fff;
+
+
+
+.GlobalNav-layout {
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  display: -webkit-flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 }
 
-.listing-card img {
-  width:100%;
-    max-height:270px;
-}
 
-nav.primary-nav {
+.GlobalNav {
   background-color: rgba(255,255,255,0.99);
   border-bottom: 1px solid rgba(0,0,0,0.07);
   box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
@@ -45,7 +53,30 @@ nav.primary-nav {
   z-index: 2000;
 }
 
-.primary-nav-left-side {
+.GlobalNav-browse {
+   display: block;
+   position: absolute;
+   top: 0;
+   width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1403px;
+  min-width: 310px;
+  padding: 0 42px;
+  position: relative;
+  width: 100%;
+}
+
+
+.GlobalNav-leftSide {
   height: 100%;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -62,14 +93,185 @@ nav.primary-nav {
   align-items: center;
 }
 
-.wrapper {
-  .wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1203px;
-  min-width: 310px;
-  padding: 0 42px;
+#lockup {
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  background-color: #60b0c9;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  overflow: hidden;
   position: relative;
+  display: block;
+}
+
+.nav-tabs {
+  height: 100%;
+  font-weight: 500;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-align: left;
+  margin-left: 20px;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  display: -webkit-flex;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.nav-tabs a {
+  color: #adadad;
+  font-size: 24px;
+  margin: 0 9px;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition-property: font-size, color;
+  transition-property: font-size, color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.nav-tabs a:hover, .nav-tabs a:focus {
+  color: #525252;
+  outline: none;
+}
+
+.GlobalNav-spacer {
+  height: 88px;
+}
+
+.cards-container {
+  font-size: 0;
+  margin: -2% -2% 0;
+  position: relative;
+  margin-top: 32px;
+}
+
+.ProductCard {
+  display: inline-block;
+  margin: 2%;
+  min-width: 270px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  vertical-align: top;
+  width: 29.333333333%;
+  box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
+}
+
+@media only screen and (max-width: 985px) {
+  .ProductCard {
+    width: 46%;
+    min-width: 200px;
+  }
+}
+
+.product-img-container {
+  background-color: white;
+  height: 368px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
   width: 100%;
 }
+
+.hover-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
 }
+
+.product .product-image {
+  margin: 60px 20% 80px;
+}
+
+.product-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  font-size: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+a.card-price {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0;
+  display: inline-block;
+  padding: 10px 44px 10px 22px;
+  right: -1px;
+  white-space: nowrap;
+  vertical-align: top;
+  z-index: 4;
+  -moz-osx-font-smoothing: initial;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+    color: white;
+  background-color: #60b0c9;
+  font-weight: 400;
+  text-decoration: none;
+  box-sizing: border-box;
+
+}
+
+/*a.button, .button, input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #60b0c9;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 8px 0 0;
+  padding: 13px 20px 15px;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition-property: background-color, padding, font-size;
+  transition-property: background-color, padding, font-size;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+*/

@@ -1,8 +1,25 @@
-<h1>Hembee</h1>
-<% @listings.each do |listing| %>
-  <div class="listing-card">
-    <%= image_tag(listing.main_image_url) %>
-    <p><%= link_to " view product", "http://www.etsy.com/listing/#{listing.etsy_listing_id}" %> <span style="float:right"><%= listing.price %></span></p>
-  </div>
+<div class="cards-container">
 
-<% end %>
+  <% @listings.each do |listing| %>
+    <div class="ProductCard product">
+      <%= link_to(etsy_listing_url(listing.etsy_listing_id)) do %>
+        <div class="product-img-container">
+          <div class="hover-container">
+            <div class="product-image" style="background-image:url('<%= listing.css_image_url %>');">
+               <!-- <%= image_tag(listing.main_image_url) %> -->
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="top-right">
+        <a href="http://www.amazon.com/dp/B005DPUKSO/" target="_blank" rel="nofollow" class="card-price button" >$58</a>
+      </div>
+
+    </div>
+
+  <% end %>
+
+
+</div>
+
+

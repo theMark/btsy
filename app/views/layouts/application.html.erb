@@ -7,13 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="primary-nav">
-  <div class="primary-nav-left-side">
-    <h1>Hembee</h1>
-  </div>
-</nav>
 
-<%= yield %>
+<div class="GlobalNav">
+  <div class="GlobalNav-browse">
+    <div class="GlobalNav-layout wrapper">
+      <div class="GlobalNav-leftSide">
+        <!-- <a href="" id="lockup"></a> -->
+        <%= link_to "", root_url, :id => "lockup" %>
+        <div class="nav-tabs">
+          <%= link_to "Shop Hembee", root_url %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="GlobalNav-spacer"></div>
+<div class="wrapper">
+  <%= yield %>
+</div>
 
 </body>
 </html>
