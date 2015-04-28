@@ -12,7 +12,7 @@
         </div>
       <% end %>
       <div class="top-right">
-        <a href="http://www.amazon.com/dp/B005DPUKSO/" target="_blank" rel="nofollow" class="card-price button" ><%= listing.price %></a>
+        <a href="http://www.amazon.com/dp/B005DPUKSO/" target="_blank" rel="nofollow" class="card-price button" ><%= number_to_currency(listing.price, :precision => 0) %></a>
       </div>
 
     </div>
