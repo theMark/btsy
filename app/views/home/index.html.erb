@@ -8,11 +8,14 @@
             <div class="product-image" style="background-image:url('<%= listing.css_image_url %>');">
                <!-- <%= image_tag(listing.main_image_url) %> -->
             </div>
+            <div class="fav">
+            &nbsp;
+            </div>
           </div>
         </div>
       <% end %>
       <div class="top-right">
-        <a href="http://www.amazon.com/dp/B005DPUKSO/" target="_blank" rel="nofollow" class="card-price button" ><%= number_to_currency(listing.price, :precision => 0) %></a>
+        <a href="" target="_blank" rel="nofollow" class="card-price button" ><%= number_to_currency(listing.price, :precision => 0) %></a>
       </div>
 
     </div>

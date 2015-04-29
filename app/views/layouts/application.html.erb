@@ -8,6 +8,8 @@
 </head>
 <body>
 
+
+
 <div class="GlobalNav">
   <div class="GlobalNav-browse">
     <div class="GlobalNav-layout wrapper">
@@ -18,11 +20,21 @@
           <%= link_to "Shop Hembee", root_url %>
         </div>
       </div>
+      <div class="account">
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+            <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="GlobalNav-spacer"></div>
+<p style="position:absolute;z-index:100;top:0;left:0" class="notice"><%= notice %></p>
+<p style="position:absolute;z-index:100;top:0;left:0" class="alert"><%= alert %></p>
 <div class="wrapper">
   <%= yield %>
 </div>
