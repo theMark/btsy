@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy, :favorite, :unfavorite]
 
   # GET /listings
   # GET /listings.json
@@ -59,6 +59,17 @@ class ListingsController < ApplicationController
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def unfavorite
+    @favorite = Favorite.where(:listing_id => @listing.id).first
+    @favorite.destroy
+    redirect_to root_url
+  end
+
+  def favorite
+      current_user.favorites.create(:listing => @listing)
+      redirect_to root_url
   end
 
   private

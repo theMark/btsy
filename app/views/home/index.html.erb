@@ -6,11 +6,13 @@
         <div class="product-img-container">
           <div class="hover-container">
             <div class="product-image" style="background-image:url('<%= listing.css_image_url %>');">
-               <!-- <%= image_tag(listing.main_image_url) %> -->
             </div>
-            <div class="fav">
-            &nbsp;
-            </div>
+          <% if current_user.favorites.where(:listing_id => listing.id).first.nil? %>
+              <%= link_to "", favorite_listing_path(listing), method: :put, :class => "no-fav" %>
+          <% else %>
+              <%= link_to "", unfavorite_listing_path(listing), method: :delete, :class => "fav" %>
+          <% end %>
+            </a>
           </div>
         </div>
       <% end %>
@@ -24,5 +26,4 @@
 
 
 </div>
-
 
