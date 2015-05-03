@@ -294,26 +294,19 @@ a.card-price {
   width: 48px;
 }*/
 
-.fav {
-  display: block;
-  height:50px;
-  width:50px;
-  background: image-url("icon-heart.png") center center no-repeat;
-  opacity: 1;
-}
-
-.no-fav:hover,
-.fav:hover {
-    opacity: 1;
-}
-
-.no-fav {
+a#fav {
   display: block;
   height:50px;
   width:50px;
   background: image-url("icon-heart.png") center center no-repeat;
   opacity: .1;
 }
+
+a#fav.active {
+  opacity: 1;
+}
+
+
 
 
 .account {

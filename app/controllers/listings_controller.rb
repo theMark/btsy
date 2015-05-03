@@ -64,12 +64,13 @@ class ListingsController < ApplicationController
   def unfavorite
     @favorite = Favorite.where(:listing_id => @listing.id).first
     @favorite.destroy
-    redirect_to root_url
+    respond_to :js
   end
 
   def favorite
       current_user.favorites.create(:listing => @listing)
-      redirect_to root_url
+      # redirect_to root_url
+      respond_to :js
   end
 
   private

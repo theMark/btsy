@@ -1,7 +1,7 @@
 <div class="cards-container">
 
   <% @listings.each do |listing| %>
-    <div class="ProductCard product">
+    <div id="<%=listing.id%>" class="ProductCard product">
       <%= link_to(etsy_listing_url(listing.etsy_listing_id)) do %>
         <div class="product-img-container">
           <div class="hover-container">
@@ -9,9 +9,9 @@
             </div>
           <% if user_signed_in? %>
             <% if current_user.favorites.where(:listing_id => listing.id).first.nil? %>
-                <%= link_to "", favorite_listing_path(listing), method: :put, :class => "no-fav" %>
+              <%= link_to "", "", :id => "fav", :class => "", :'data-id' => "#{listing.id}" %>
             <% else %>
-                <%= link_to "", unfavorite_listing_path(listing), method: :delete, :class => "fav" %>
+              <%= link_to "", "", :id => "fav", :class => "active", :'data-id' => "#{listing.id}" %>
             <% end %>
           <% end %>
             </a>
@@ -28,4 +28,5 @@
 
 
 </div>
+
 
