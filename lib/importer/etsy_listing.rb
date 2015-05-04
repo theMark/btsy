@@ -27,15 +27,6 @@ module Importer
       price = l.price
       etsy_user_id = l.user_id
 
-      #FOR TESTING
-      # puts title
-      # puts description
-      # puts etsy_listing_id
-      # puts main_image_url
-      # puts price
-      # puts etsy_user_id
-
-
       # Create new listing if it doesn't exist
       if Listing.where(etsy_listing_id: etsy_listing_id).exists?
         puts "That listing already exists for: #{etsy_listing_id}"
@@ -50,7 +41,6 @@ module Importer
           )
         puts "new listing created: #{@listing.title}"
       end
-
 
 
 

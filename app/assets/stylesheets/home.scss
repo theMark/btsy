@@ -294,7 +294,7 @@ a.card-price {
   width: 48px;
 }*/
 
-a#fav {
+.fav-link {
   display: block;
   height:50px;
   width:50px;
@@ -302,7 +302,7 @@ a#fav {
   opacity: .1;
 }
 
-a#fav.active {
+.fav-link.active {
   opacity: 1;
 }
 
