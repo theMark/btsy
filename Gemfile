@@ -38,7 +38,7 @@ gem 'devise'
 
 #heroku recoomends puma
 gem 'puma'
-gem 'rename'
+gem 'bourbon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

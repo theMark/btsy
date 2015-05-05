@@ -1,23 +1,37 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+.wrapper {
+  @include flexbox();
+}
+
+.item {
+  @include flex(1 200px);
+  @include order(2);
+  background: pink;
+  height:150px;
+  margin:10px;
+  padding:25px;
+  text-align: center;
+}
+
+*/
+
 body {
   height: 100%;
-  font-family: europa,'Helvetica Neue', 'Helvetica', sans-serif;
+  font-family: 'Helvetica', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; /* optimize for legibility instead of speed */
   font-weight: 400;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  color: #525252;
+  @include font-smoothing();
+  color: #555;
   font-size:16px;
-  background-color: #f2f2f2;
+  @include linear-gradient(to top, #f2f2f2, #fcfcfc);
 }
 
 
 
-
+/*
 .GlobalNav-layout {
   height: 100%;
   display: -ms-flexbox;
@@ -33,25 +47,107 @@ body {
   -webkit-justify-content: space-between;
   -webkit-box-pack: justify;
   justify-content: space-between;
+}*/
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1403px;
+  min-width: 310px;
+  padding: 0 42px;
+  position: relative;
+  width: 100%;
 }
 
-
-.GlobalNav {
+.primary-nav {
+  @include flexbox();
   background-color: rgba(255,255,255,0.99);
   border-bottom: 1px solid rgba(0,0,0,0.07);
   box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
-  height: 88px;
+  height: 80px;
   position: fixed;
   top: 0;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   width: 100%;
   z-index: 2000;
+  border-bottom:1px solid #dedede;
 }
+
+.navish {
+  height:100%;
+}
+
+
+.left-side {
+  height:100%;
+  @include flexbox();
+  @include flex(row);
+  display: inline-block;
+}
+
+
+.logo {
+  font-family: 'Noto Sans', sans-serif;
+  font-size:35px;
+  font-weight:bold;
+  color:#60b0c9;
+  padding-top:15px;
+  small {
+    font-size:16px;
+    color:#bdbdbd;
+  }
+}
+
+.right-side {
+  height:100%;
+  float:right;
+}
+
+
+
+.account {
+  padding:28px 0 0;
+  color: #adadad;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition-property: font-size, color;
+  transition-property: font-size, color;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  height:100%;
+    display: flex;
+  display: -webkit-flex;
+
+  a {
+    padding: 0 0 0 15px;
+    color: #adadad;
+    height:100%;
+    display: flex;
+    display: -webkit-flex;
+
+    &:hover {
+      color: #525252;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .GlobalNav-browse {
    display: block;
@@ -65,15 +161,7 @@ body {
 
 
 
-.wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  max-width: 1403px;
-  min-width: 310px;
-  padding: 0 42px;
-  position: relative;
-  width: 100%;
-}
+
 
 
 .GlobalNav-leftSide {
@@ -101,8 +189,7 @@ body {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+
   overflow: hidden;
   position: relative;
   display: block;
@@ -307,38 +394,5 @@ a.card-price {
 }
 
 
-
-
-.account {
-  float:right;
-  padding:24px 0;
-  color: #adadad;
-  font-size: 24px;
-  margin: 0;
-  font-weight: 300;
-  text-decoration: none;
-  -webkit-transition-property: font-size, color;
-  transition-property: font-size, color;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  height:100%;
-    display: flex;
-  display: -webkit-flex;
-}
-.account a {
-  padding: 5px 0 5px 10px;
-  color: #adadad;
-  font-size: 18px;
-  height:100%;
-    display: flex;
-  display: -webkit-flex;
-}
-
-.account a:hover {
-  color: #525252;
-  outline: none;
-}
 
 
