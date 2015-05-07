@@ -26,7 +26,7 @@ body {
   @include font-smoothing();
   color: #555;
   font-size:16px;
-  @include linear-gradient(to top, #f2f2f2, #fcfcfc);
+  @include linear-gradient(to top, #f2f2f2, #f7f7f7);
 }
 
 
@@ -81,9 +81,7 @@ body {
 
 .left-side {
   height:100%;
-  @include flexbox();
-  @include flex(row);
-  display: inline-block;
+  float:left;
 }
 
 
@@ -93,6 +91,8 @@ body {
   font-weight:bold;
   color:#60b0c9;
   padding-top:15px;
+  display: inline-block;
+  float:left;
   small {
     font-size:16px;
     color:#bdbdbd;
@@ -164,7 +164,7 @@ body {
 
 
 
-.GlobalNav-leftSide {
+/*.GlobalNav-leftSide {
   height: 100%;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -179,9 +179,20 @@ body {
   -webkit-align-items: center;
   -webkit-box-align: center;
   align-items: center;
+}*/
+
+.slogan {
+  float:left;
+  display: inline-block;
+  font-weight:300;
+  color:#ccc;
+  font-size:22px;
+  margin:0;
+  padding:30px 10px 0 35px;
 }
 
-#lockup {
+
+/*#lockup {
   height: 58px;
   width: 58px;
   border-radius: 50%;
@@ -193,8 +204,8 @@ body {
   overflow: hidden;
   position: relative;
   display: block;
-}
-
+}*/
+/*
 .nav-tabs {
   height: 100%;
   font-weight: 500;
@@ -229,7 +240,7 @@ body {
   transition-duration: 0.2s;
   -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-}
+}*/
 
 .nav-tabs a:hover, .nav-tabs a:focus {
   color: #525252;
@@ -244,7 +255,7 @@ body {
   font-size: 0;
   margin: -2% -2% 0;
   position: relative;
-  margin-top: 32px;
+  margin-top: 12px;
 }
 
 .ProductCard {
@@ -284,6 +295,7 @@ body {
   width: 100%;
 }
 
+
 .hover-container {
   height: 100%;
   width: 100%;
@@ -292,7 +304,7 @@ body {
 }
 
 .product .product-image {
-  margin: 60px 20% 80px;
+  /*margin: 60px 20% 80px;*/
 }
 
 .product-image {
@@ -305,6 +317,10 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+      -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .top-right {
@@ -336,6 +352,7 @@ a.card-price {
   font-weight: 400;
   text-decoration: none;
   box-sizing: border-box;
+
 
 }
 
