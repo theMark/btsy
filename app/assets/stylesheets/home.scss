@@ -399,13 +399,18 @@ a.card-price {
 }*/
 
 .fav-link {
+  position: absolute;
+  top:0;
+  left:0;
   display: block;
   height:50px;
   width:50px;
   background: image-url("icon-heart.png") center center no-repeat;
-  opacity: .1;
+  opacity: .3;
+  z-index:4;
 }
 
+.fav-link:hover,
 .fav-link.active {
   opacity: 1;
 }
